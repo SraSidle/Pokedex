@@ -1,0 +1,28 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -e js,html,css,ejs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SraSidle/Pokedex.git"
+  },
+  "author": "Bianca Aguiar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SraSidle/Pokedex/issues"
+  },
+  "homepage": "https://github.com/SraSidle/Pokedex#readme",
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

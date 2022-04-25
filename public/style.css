@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;500;600;700&family=Great+Vibes&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,400;1,500;1,700;1,900&family=Rubik:wght@500&display=swap');
+
+@media only screen and (max-device-width: 900px) {
+   div.card { width: 600px }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto , "Times New Roman" , Arial;
+}
+
+main {
+  margin: 0 10% 0 10%;
+}
+
+body { 
+  width: 100vw;
+  height: auto;
+  background-color: rgba(24, 23, 23, 0.904);
+}
+
+header {
+  background-color: rgb(214, 35, 35);
+  width: 100%;
+  
+}
+
+header nav ul {
+  display: flex;
+  padding: 1%;
+
+}
+ nav h1{
+  margin-top: 0.5%;
+}
+
+nav a{
+  
+  padding: 1%;
+  list-style-type: none;
+  text-decoration: none;
+  color: white;
+  font-size: 0.9rem;
+  transition: all ease-in-out 0.4s;
+  cursor: pointer
+}
+
+header img {
+  width: 2.5rem;
+}
+
+nav a:hover{
+  transform: scale(1.1);
+}
+
+section#cards {
+  margin-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  font-size: 1em;
+}
+
+section#cards div.card:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+section#cards div.card{
+  width: 14rem;
+  height: 22rem;
+  padding: 1%;
+  border: solid 10px rgb(214, 35, 35);
+  /* border: 4mm ridge #32a1ce; */
+  transition: 0.5s;
+  background-color: rgb(238, 234, 234);
+  box-shadow: 3px 4px 4px 4px #00000035;
+  border-radius: 1.6rem 0 1.6rem 0 ;
+  margin: 4% 2% 4% 2%;
+
+}
+
+section#cards div.card img{
+  width:100%;
+}
+
+section#cards h2 {
+  margin-bottom: 2%;
+  font-size: 2em;
+}
+
+section#cards a{
+  text-decoration: none;
+  color: red;
+  padding: 1%;
+}
+stan#descricao {
+  padding: 0.5%;
+ background-color: #68D62D;
+ border-radius: 0.2rem 0.2rem 0.2rem 0.2rem;
+}
+
+footer{
+  
+  background-color: rgb(214, 35, 35);
+  padding: 1%;
+  margin-top: 2%;
+  text-align: center;
+  
+}
+
+footer a {
+  text-decoration: none;
+  color:rgb(238, 234, 234);
+}
+
+footer a:hover{
+  transform: scale(1.1);
+  color:black;
+}
+
+/*Rota Detalhes*/
+
+
+section#detalhe {
+  margin-top: 4%;
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+}
+
+section#detalhe img{
+  max-width: 80%;
+  border: 1rem ridge rgb(214, 35, 35); 
+  background-color: rgb(238, 234, 234);
+  margin-top: 5%;
+  /* box-shadow: 0.25rem 0.25rem  0.25rem  0.25rem  rgba(112, 111, 111, 0.575); */
+  margin-bottom: 4%;
+}
+
+section#detalhe h1{
+  padding-bottom: 1%;
+}
+
+section#detalhe div#descricoes{
+   width: 60%;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   background-color: rgb(231, 231, 33);
+   border-radius: 1rem 1rem 1rem 1rem;
+   padding: 5%;
+   text-align: center;
+} 
+
+section#detalhe div p{
+  padding: 2%;
+  font-weight: 500;
+}
+
+/* Rota Cadastro*/
+
+section#cadastro {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #68D62D;
+  padding: 10%;
+ 
+}
+
+section#cadastro h2{
+  width: 100%;
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+section#cadastro form input{
+  width: 100%;
+  padding: 10%;
+  padding: 0.5%;
+  font-size: 1rem;
+  margin: 0.5% 1% 1% 0;
+}
+
+section#cadastro form button{
+  width: 27%;
+  padding:1%;
+  display:flex;
+  justify-content:center;
+  margin: 0 auto;
+  margin-top: 3%; 
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+  color: #68D62D;
+  border:solid 0.1rem #68D62D;;
+  cursor: pointer;
+  transition: all ease-in-out 0.4s;
+  padding: 1%;
+}
+
+section#cadastro form button:hover{
+  transform: scale(1.1);
+  color: rgba(24, 23, 23, 0.904);
+  background-color: #68D62D;
+} 
+
+section#p{
+  display:none;
+}

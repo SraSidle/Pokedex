@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+    <title> Aba cadastro </title>
+</head>
+
+<body>
+    
+    <%-include('./partials/confirma.ejs') %>
+    <%- include('./partials/header.ejs') %> 
+    
+    <main>
+
+        <section id="cadastro" >
+
+            <h2> Cadastre um novo Pokémon </h2>
+
+            <form action ="/add" method="POST">
+      
+                <label for="nome">Nome: </label>
+                <input type="text" id="nome" name="nome" required>
+      
+                <label for="descricao"> Descrição: </label>
+                <input type="text" id="descricao" name="descricao" required>
+
+                <label for="altura"> Altura: </label>
+                <input type="number" min="0.1" step="0.1" id="altura" name="altura" required>
+
+                <label for="peso"> Peso: </label>
+                <input type="number" min="0.1" step="0.1" id="altura" required>
+      
+                <label for="tipo">Tipo: </label>
+                <input type="text" id="tipo" name="tipo" required>
+
+                <label for="categoria"> Categoria: </label> 
+                <input type="text" id="categoria" name="categoria" required>
+
+                <label for="habilidade"> habilidade: </label>
+                <input type="text" id="habilidade" name="habilidade" required>
+
+                <label for="fraquezas"> Fraquezas: </label>
+                <input tipe="text" id="fraquezas" name="fraquezas" required>
+      
+                <label for="imagem">Link da imagem </label>
+                <input type="text" id="imagem" name="imagem" required>
+                
+                <button id="btcadastro" type="submit" onclick="confirma()"> Cadastrar </button>
+            </form>
+
+        </section>
+     
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+    <script src = "../public/script.js"></script>
+    
+</body>
+</html>
