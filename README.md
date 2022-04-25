@@ -15,6 +15,8 @@ Para esse projeto, foram utilizadas as ferramentas abaixo:
     <img src="https://img.icons8.com/ios-filled/100/000000/css3.png"/>
     <img src="https://img.icons8.com/color/144/000000/html-5--v2.png"/>
     <img src="https://img.icons8.com/color/144/000000/nodejs.png"/>
+    <img src="https://img.icons8.com/color/144/000000/express.png">
+    <img src="https://th.bing.com/th/id/R.f77363d3557a661456b15034aead02cf?rik=ANyD1Hbh2lv51w&pid=ImgRaw&r=0&sres=1&sresct=1">
 </div>
 
 ## Contato
