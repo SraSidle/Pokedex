@@ -10,7 +10,6 @@
 
 <body>
     
-    <%-include('./partials/confirma.ejs') %>
     <%- include('./partials/header.ejs') %> 
     
     <main>
@@ -48,7 +47,7 @@
                 <label for="imagem">Link da imagem </label>
                 <input type="text" id="imagem" name="imagem" required>
                 
-                <button id="btcadastro" type="submit" onclick="confirma()"> Cadastrar </button>
+                <button id="btcadastro" type="submit"> Cadastrar </button>
             </form>
 
         </section>
@@ -56,7 +55,6 @@
     </main>
 
     <%- include('./partials/footer.ejs') %>
-    <script src = "../public/script.js"></script>
     
 </body>
 </html>
