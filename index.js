@@ -178,22 +178,21 @@ app.get("/" , (req, res) => {
 })
 
 
-app.get("/add" , (req , res) => {
-  res.render("cadastro.ejs")
+app.get("/cadastro" , (req , res) => {
+  res.render("cadastro")
     
 })
 
-
-app.post("/add" , (req, res) => {
+  app.post("/add" , (req, res) => {
  
   const pokemon = req.body;
   pokedex.id = pokedex.length + 1
   pokedex.push(pokemon);
 
-  // res.redirect("/");
+  setTimeout(() => { res.redirect("/"); }, 5000);
 })
 
-app.get("/detalhes/:id" , (req , res) => {
+  app.get("/detalhes/:id" , (req , res) => {
     let id = +req.params.id;
     const pokemon = pokedex.find(pokedex => pokedex.id === id);
     res.render("destalhes", {pokemon});
