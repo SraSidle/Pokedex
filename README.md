@@ -17,7 +17,7 @@ Para esse projeto, foram utilizadas as ferramentas abaixo:
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" >
 
-<div style="display: flex">
+<div style="display: flex" width="5rem">
     <img src="https://cdn2.iconfinder.com/data/icons/designer-skills/128/code-programming-javascript-software-develop-command-language-512.png"/>
     <img src="https://cdn1.iconfinder.com/data/icons/social-icon-2-1/512/social_style_2_css3-512.png"/>
     <img src="https://cdn0.iconfinder.com/data/icons/social-network-9/50/22-512.png"/>
