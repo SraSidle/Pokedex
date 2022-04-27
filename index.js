@@ -10,17 +10,13 @@ app.set("view engine" , "ejs" )
 app.use(express.static(path.join(__dirname, "public")))
 app.use(express.urlencoded());
 
-const port = 3001
-app.listen(3001 , () => {
-  console.log(`Servidor rodando em http://localhost:${port}/`)
-})
+const PORT = process.env.PORT || 3001;
 
 const pokedex = [
         {
-  
           id: 1,
           nome: "Bulbasaur",
-          numero: 1,
+          cod: 1,
           tipo:"Grass",
           imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
           descricao: "Há uma semente de planta em suas costas desde o dia em que este Pokémon nasce. A semente lentamente cresce.",
@@ -33,7 +29,7 @@ const pokedex = [
         {
           id: 2,
           nome: "Ivysaur" ,
-          numero: 2,
+          cod: 2,
           tipo: "Grass" , // e Poison(veneno)
           imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png",
           descrição: "Quando a lâmpada em suas costas cresce grande, parece perder a capacidade de ficar em suas patas traseiras." ,
@@ -47,7 +43,7 @@ const pokedex = [
         {
           id:3 ,
           nome: "Venusaur" ,
-          numero: 3,
+          cod: 3,
           tipo:"Grass",
           imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png",
           descricao: "Sua planta floresce quando está absorvendo energia solar. Ele fica em movimento para buscar a luz solar",
@@ -60,7 +56,7 @@ const pokedex = [
         {
           id: 4,
           nome: "Charmander",
-          numero: 4,
+          cod: 4,
           tipo: "fire" ,
           imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
           descricao: "Tem preferência por coisas quentes. Quando chove, diz-se que o vapor jorra da ponta da cauda.",
@@ -73,7 +69,7 @@ const pokedex = [
         {
           id: 5,
           nome: "Charmeleon",
-          numero: 5, 
+          cod: 5, 
           tipo: "Fire",
           imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/005.png",
           descricao: "Tem uma natureza bárbara. Em batalha, ele chicoteia sua cauda ardente ao redor e corta com garras afiadas.",
@@ -86,7 +82,7 @@ const pokedex = [
         {
           id: 6,
           nome: "Charizard",
-          numero: 6,
+          cod: 6,
           tipo:"Fire", //voador
           imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png",
           descricao: "Ele cospe fogo que é quente o suficiente para derreter pedregulhos. Pode causar incêndios florestais soprando chamas.",
@@ -99,7 +95,7 @@ const pokedex = [
           {
             id: 7,
           nome: "Squirtle",
-          numero: 7,
+          cod: 7,
           tipo: "Water",
           imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
           descricao: "Quando ele retrai seu pescoço longo em sua concha, ele esguicha água com força vigorosa.",
@@ -112,7 +108,7 @@ const pokedex = [
           {
             id: 8,
           nome: "Wartortle",
-          numero: 8,
+          cod: 8,
           tipo: "Water",
           imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/008.png",
           descricao: "É reconhecido como um símbolo de longevidade. Se sua concha tem algas, esse Wartortle é muito velho.",
@@ -125,7 +121,7 @@ const pokedex = [
           {
             id: 9,
           nome: "Blastoise",
-          numero: 9,
+          cod: 9,
           tipo: "Water",
           imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/009.png",
           descricao: "Ele esmaga seu inimigo sob seu corpo pesado para causar desmaios. Em uma pitada, ele vai se retirar dentro de sua concha.",
@@ -138,7 +134,7 @@ const pokedex = [
           {
             id: 10,
             nome: "Pikachu",
-            numero: 25,
+             cod: 25,
             tipo: "Elétrico",
             imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
             descricao: "Pikachu que pode gerar eletricidade poderosa tem sacos de bochecha que são extra macios e super elásticos.",
@@ -151,7 +147,7 @@ const pokedex = [
           {
             id: 11,
           nome: "Raichu",
-          numero: 26,
+          cod: 26,
           tipo: "Elétrico",
           imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/026.png",
           descricao: "Sua cauda longa serve como um solo para se proteger de sua própria potência de alta tensão.",
@@ -164,7 +160,7 @@ const pokedex = [
           {
             id: 12,
           nome: "Sandshrew",
-          numero: 27,
+          cod: 27,
           tipo: "Chão",
           imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/027.png",
           descricao: "Adora tomar banho no grão de áreas secas e arenosas. Ao tomar banho de areia, o Pokémon se livra da sujeira e umidade agarradas ao seu corpo.",
@@ -181,16 +177,10 @@ app.get("/" , (req, res) => {
    {pokedex})
 })
 
-app.get("/detalhes/:id" , (req , res) => {
-    let id = +req.params.id 
-    const pokemon = pokedex.find(pokedex => pokedex.id === id)
-    res.render("detalhes", {pokemon})
-})
 
 app.get("/add" , (req , res) => {
   res.render("cadastro.ejs")
-      
-    res.redirect("/")
+    
 })
 
 
@@ -199,6 +189,17 @@ app.post("/add" , (req, res) => {
   const pokemon = req.body;
   pokedex.id = pokedex.length + 1
   pokedex.push(pokemon);
-  
-  res.redirect("/")
+
+  // res.redirect("/");
 })
+
+app.get("/detalhes/:id" , (req , res) => {
+    let id = +req.params.id;
+    const pokemon = pokedex.find(pokedex => pokedex.id === id);
+    res.render("destalhes", {pokemon});
+  });
+
+  app.listen(PORT , () => {
+    console.clear();
+    console.log(`Servidor rodando em http://localhost:${PORT}/`);
+  });
