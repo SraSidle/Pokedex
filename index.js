@@ -183,19 +183,18 @@ app.get("/cadastro" , (req , res) => {
     
 })
 
-  app.post("/add" , (req, res) => {
- 
+  app.post("/add" , (req, res) => { 
   const pokemon = req.body;
-  pokedex.id = pokedex.length + 1
+  pokemon.id = pokedex.length + 1
   pokedex.push(pokemon);
-
+  
   setTimeout(() => { res.redirect("/"); }, 5000);
 })
 
   app.get("/detalhes/:id" , (req , res) => {
     let id = +req.params.id;
     const pokemon = pokedex.find(pokedex => pokedex.id === id);
-    res.render("destalhes", {pokemon});
+    res.render("detalhes", {pokemon});
   });
 
   app.listen(PORT , () => {
