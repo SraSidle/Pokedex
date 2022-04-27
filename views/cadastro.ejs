@@ -10,6 +10,7 @@
 
 <body>
     
+    <%-include('./partials/confirmacao.ejs')  %> 
     <%- include('./partials/header.ejs') %> 
     
     <main>
@@ -23,7 +24,8 @@
                 <label for="nome">Nome: </label>
                 <input type="text" id="nome" name="nome" required>
       
-                <label for="descricao"> Descrição: </label>
+
+                <!--<label for="descricao"> Descrição: </label>
                 <input type="text" id="descricao" name="descricao" required>
 
                 <label for="codigo"> Código: </label>
@@ -49,8 +51,9 @@
       
                 <label for="imagem">Link da imagem </label>
                 <input type="text" id="imagem" name="imagem" required>
+                -->
                 
-                <button id="btcadastro" type="submit"> Cadastrar </button>
+                <button id="btcadastro" type="submit" onclick= "confirma()"> Cadastrar </button>
             </form>
 
         </section>
@@ -58,6 +61,7 @@
     </main>
 
     <%- include('./partials/footer.ejs') %>
+    <script src="/public/script.js"></script>
     
 </body>
 </html>

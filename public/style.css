@@ -209,6 +209,10 @@ section#cadastro form button:hover{
   background-color: #68D62D;
 } 
 
-section#p{
-  display:none;
+section#c{
+  position: fixed;
+	display: none;
+  width: 100%;
+  height: 100%;
 }
+
